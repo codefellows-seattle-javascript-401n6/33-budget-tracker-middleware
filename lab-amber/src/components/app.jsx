@@ -10,7 +10,7 @@ import {logger} from '../middleware/';
 
 const store = createStore(
   reducers,
-  applyMiddleware(middlewares.logger)
+  applyMiddleware(middlewares.logger, middlewares.validator)
 );
 
 import Dashboard from './dashboard.jsx';
