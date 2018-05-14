@@ -5,11 +5,11 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 
 import reducers from '../reducer/';
 
-// import middleware from '../middleware/'
+import middleware from '../middleware/'
 
 const store = createStore(
     reducers,
-    // applyMiddleware(middleware.logger, middleware.validator)
+    applyMiddleware(middleware.logger, middleware.validator)
 );
 
 import Dashboard from './dashboard.jsx';

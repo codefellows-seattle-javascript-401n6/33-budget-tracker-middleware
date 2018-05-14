@@ -1,21 +1,14 @@
+// Possible items to add:
+// Prevent an item from being added if it's over budget.
+// Prevent a budget from being created with zero or less dollars.
+// Prevent a budget or item from being created without a name.
+
+
 //from lab 33 demo code
-const validateCard = store => next => action => {
-    const isCard = action.type && action.type.startsWith('CARD');
-      if (isCard) {
-        try {
-          const card = action.payload;
-          const notValid = !card.id || !card.content || !card.categoryID;
-          if (notValid) {
-            throw new Error('VALIDATION ERROR: card must include id, content, and categoryID');
-          } else {
-            return next(action);
-          }
-        } catch (err) {
-          console.error(err);
-      } 
-    } else {
-      return next(action);
-    }
-  }
-  
-//   export default validator;
+const validator = store => next => action => {
+
+    return next(action);
+}
+
+
+  export default validator;

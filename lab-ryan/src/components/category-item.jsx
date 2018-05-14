@@ -27,7 +27,6 @@ class CategoryItem extends React.Component {
 
     render() {
         const categoryId = this.props.id;
-        console.log('cat-item render', categoryId);
         if(this.props.isEditing === true) {
             return (
                 <div>
