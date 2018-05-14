@@ -89,6 +89,10 @@ The App component sets up the Provider for the redux store and the Router.
 * Displays the `name` and `price` of the component
 * Displays an ExpenseForm that enables the user to update the expense in the app state
 
+##### Form Validation Middleware
+* Title and number fields for category should not be empty
+* Title and price fields for expense should not be empty
+
 ## Technologies
 
 - Nodejs
