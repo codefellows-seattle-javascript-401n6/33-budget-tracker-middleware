@@ -45,14 +45,16 @@ class ConnectedForm extends React.Component {
             type='text'
             id='title'
             value={title}
+            onBlur={this.onBlur}
             onChange={this.handleChange}
           />
-        <label htmlFor='number'>Budget</label>
+          <label htmlFor='number'>Budget</label>
           <input
             min="1"
             type='number'
             id='number'
             value={number}
+            onBlur={this.onBlur}
             onChange={this.handleChange}
           />
         </div>

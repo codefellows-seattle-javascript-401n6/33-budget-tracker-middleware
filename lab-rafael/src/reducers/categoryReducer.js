@@ -1,7 +1,7 @@
 import {
   CATEGORY_CREATE,
   CATEGORY_UPDATE,
-  CATEGORY_DESTROY
+  CATEGORY_DESTROY,
 } from '../actions/categoryActions.js';
 
 const initialState = {

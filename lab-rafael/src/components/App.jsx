@@ -9,6 +9,7 @@ import combinedReducer from '../reducers/';
 const store = createStore(combinedReducer,
   applyMiddleware(
     middlewares.logger,
+    middlewares.validateCategory
   )
 );
 

@@ -1,6 +1,7 @@
 import logger from './logger';
-//import budgetLimit from './budgetLimit';
+import validateCategory from './validateCategory';
 
 export default {
   logger,
+  validateCategory
 }
