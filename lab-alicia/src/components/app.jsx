@@ -1,17 +1,28 @@
 import React from 'react';
-import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
+import {createStore, applyMiddleware} from 'redux';
 
-import combinedReducer from '../reducers/';
-import middlewares from '../middlewares';
-import {logger} from './middleware';
+import combineReducers from '../reducers/';
+import middlewares from '../middleware/';
 
-const store = createStore(combinedReducer);
+// import {logger, validator} from '../middleware/';
+
+const store = createStore(combineReducers, 
+  applyMiddleware(
+    middlewares.logger,
+    middlewares.validator
+  )
+  // applyMiddleware(logger, validator)
+);
 
 import MainPage from './mainPage.jsx';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Provider store={store}>
