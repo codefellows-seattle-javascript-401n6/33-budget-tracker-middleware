@@ -7,6 +7,7 @@ export const categoryCreate = category => {
 };
 
 export const categoryUpdate = category => {
+  console.log('category', category);
   return {type: CATEGORY_UPDATE, payload: category};
 };
 

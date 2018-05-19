@@ -12,6 +12,9 @@ import ExpenseList from '../expense/expenseList.jsx';
 class CategoryItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isEditing: false,
+    };
 
     this.handleDelete = this.handleDelete.bind(this),
     this.toggleEdit = this.toggleEdit.bind(this);
@@ -19,48 +22,46 @@ class CategoryItem extends React.Component {
   }
 
   toggleEdit(ev) {
-    this.props.categoryUpdate({isEditing: true, id: this.props.id});
+    this.setState({isEditing: !this.state.isEditing});
+    // this.props.categoryUpdate({category: this.props.category, isEditing: true, id: this.props.id});
   }
 
   toggleOffEdit(ev) {
-    this.props.categoryUpdate({isEditing: false, id: this.props.id});
+    this.props.categoryUpdate({isEditing: false, id: this.props.category.id});
   }
 
   handleDelete(ev) {
     ev.preventDefault();
-    this.props.categoryDestroy(this.props.id);
+    this.props.categoryDestroy(this.props.category.id);
   }
 
   render() {
-    if(this.props.isEditing === true) {
+    if(this.state.isEditing === true) {
       return (
-        <div>
-          <CategoryForm name="update" 
-            id={this.props.id}>
+        <div className="category-item">
+          <CategoryForm name="update"
+            category={this.props.category}
+            toggleEdit={this.toggleEdit}>
           </CategoryForm>
-          <button 
-            onClick={this.toggleOffEdit}
-            id={this.props.id}>
-            Cancel
-          </button>
         </div>
       );
     }
     return (
-      <li key={this.props.key} id={this.props.id}>
-        {this.props.name}: ${this.props.budget} 
+      <li key={this.props.category.id} id={this.props.category.id}>
+        {this.props.category.name}: ${this.props.category.budget} 
         <button 
-          id={this.props.id} 
+          id={this.props.category.id} 
           onClick={this.handleDelete}>
           Delete
         </button>
         <button 
-          id={this.props.id} 
+          id={this.props.category.id} 
           onClick={this.toggleEdit}>
           Update
         </button>
-        <ExpenseForm categoryId={this.props.id} name="update" buttonText="Create Expense"/>
-        <ExpenseList categoryId={this.props.id} />
+        <h5>Add an Expense</h5>
+        <ExpenseForm categoryId={this.props.category.id} buttonText='create' />
+        <ExpenseList categoryId={this.props.category.id} />
       </li> 
     );
   }
