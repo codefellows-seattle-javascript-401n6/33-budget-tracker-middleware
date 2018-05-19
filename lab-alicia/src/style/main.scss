@@ -1,4 +1,4 @@
-/*                     Main Styles                                            */
+/* Main Styles                                            */
 $primarycolor: rgba(0, 0, 0, 0.7);
 $secondarycolor: #111;
 $whitetextcolor: rgba(255, 255, 255, 0.9);
@@ -30,7 +30,7 @@ body {
     }
 
     .logo {
-      font-family: 'Satisfy', cursive;
+      font-family: 'Arial';
       text-align: center;
       font-size: 2em;
       margin-top: 10px;
@@ -54,7 +54,7 @@ body {
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      font-family: 'Satisfy', cursive;
+      font-family: 'Arial';
     }
 
     form {
@@ -72,3 +72,8 @@ body {
     }
   }
 }
+
+// classes: category-form, expense-form
+// category-name-input & category-budget-input, expense-name-input & expense-price-input
+// category-item, expense-item
+// main-content

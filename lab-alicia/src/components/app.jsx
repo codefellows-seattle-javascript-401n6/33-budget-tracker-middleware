@@ -19,17 +19,15 @@ const store = createStore(combineReducers,
 import MainPage from './mainPage.jsx';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <Route exact path = '/' component={MainPage} />
-        </BrowserRouter>
-      </Provider>
+      <main className="main-content">
+        <Provider store={store}>
+          <BrowserRouter>
+            <Route exact path = '/' component={MainPage} />
+          </BrowserRouter>
+        </Provider>
+      </main>
     );
   }
 }

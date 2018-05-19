@@ -34,22 +34,24 @@ class ExpenseItem extends React.Component {
   render() {
     if(this.state.isEditing === true) {
       return (
-        <li>
-          <ExpenseForm action='update' buttonText="Update"
-            expenseId={this.props.id} name={this.props.name}
-            price={this.props.price} toggleEdit={this.toggleEdit}
+        <div>
+          <ExpenseForm action='update'
+            expenseId={this.props.id} 
+            name={this.props.name}
+            price={this.props.price} 
+            toggleEdit={this.toggleEdit}
             cancel={this.cancel}>
           </ExpenseForm>
-        </li>
+        </div>
       );
     } else {
       return (
-        <li>
+        <div>
           {this.props.name}
           ${this.props.price}
           <button onClick={this.handleDelete}>Delete</button>
           <button onClick={this.toggleEdit}>Cancel</button>
-        </li>
+        </div>
       );
     }
   }

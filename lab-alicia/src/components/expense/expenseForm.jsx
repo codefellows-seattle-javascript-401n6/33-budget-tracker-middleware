@@ -31,14 +31,17 @@ class ExpenseForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange}
+      <form className="expense-form"
+        onSubmit={this.handleSubmit}>
+        <input className="expense-name-input"
+          onChange={this.handleChange}
           name="name"
           type="text"
           placeholder="name"
           value={this.state.name}
         />
-        <input onChange={this.handleChange}
+        <input className="expense-price-input"
+          onChange={this.handleChange}
           name="price"
           type="text"
           placeholder="price"
@@ -48,7 +51,7 @@ class ExpenseForm extends React.Component {
           Cancel
         </button>
         <button type="submit">
-          {this.props.buttonText}
+          {this.props.buttonText === 'create' ? 'Add Expense' : 'Update Expense'}
         </button>
       </form>
     );

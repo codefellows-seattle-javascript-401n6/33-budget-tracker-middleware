@@ -1,5 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {
+  categoryCreate,
+  categoryUpdate,
+  categoryDestroy,
+} from '../../actions/category-actions.js';
 
 import CategoryItem from './categoryItem.jsx';
 
@@ -24,9 +29,7 @@ class CategoryList extends React.Component {
     return this.props.categories.map(category => {
       return <CategoryItem 
         key={category.id} 
-        id={category.id} 
-        name={category.name} 
-        budget={category.budget}
+        category={category}
         categoryDestroy={this.handleDelete}
         categoryUpdate={this.handleUpdate}
         isEditing={category.isEditing}>
@@ -37,20 +40,22 @@ class CategoryList extends React.Component {
   render() {
     return (
       <div>
-        <h2>Current Budget List:</h2>
+        <h2>Category Budget List:</h2>
         <ul>{this.displayAllCategories()}</ul>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => ({ // get something from store
   categories: state.categoryStore.categories,
 });
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => { // send something to store
   return {
     categoryCreate: category => dispatch(categoryCreate(category)),
+    categoryUpdate: category => dispatch(categoryUpdate(category)),
+    categoryDestroy: category => dispatch(categoryDestroy(category))
   };
 };
 
