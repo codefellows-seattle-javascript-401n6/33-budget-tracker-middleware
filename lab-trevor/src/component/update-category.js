@@ -15,7 +15,6 @@ class UpdateCategory extends React.Component {
       budget: ev.target.budget.value,
       index: this.props.index
     }
-    console.log('index', data.index)
     this.props.catUpdate(data);
     this.props.toggleEdit();
   }

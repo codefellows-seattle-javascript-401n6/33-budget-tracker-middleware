@@ -15,7 +15,7 @@ class UpdateExpense extends React.Component {
       expense: ev.target.budget.value,
       id: this.props.id
     }
-    console.log('index', data.index)
+    
     this.props.exUpdate(data);
     this.props.toggleEdit();
   }

@@ -10,7 +10,7 @@ class CategoryList extends React.Component {
   
 
   list(){
-    console.log('categories', this.props.categories);
+    
     return this.props.categories.map((categories, index) => {
 
       return <CategoryItem name={categories.name} budget={categories.budget} timestamp={categories.timestamp}
@@ -22,7 +22,7 @@ class CategoryList extends React.Component {
   }
 
   render(){
-    console.log('render')
+    
     return <ul>
       {this.list()}
       </ul>

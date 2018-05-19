@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
   }
 
  render() {
-   console.log('state', this.props.appstate)
+   
     return <div>
          <h1>{this.props.appName}</h1>
          <CategoryForm createCategory={this.props.catCreate}/>
