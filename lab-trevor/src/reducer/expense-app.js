@@ -35,7 +35,7 @@ export default function expenseReducer(state, action) {
       Object.assign(newState, state, {expenses: newExpenses});
       return newState;
     case EXPENSE_UPDATE:
-      console.log('action', action)
+      
       newExpenses = [...state.expenses];
       updatedEx = state.expenses.find(expense => {
         return expense.id === action.data.id

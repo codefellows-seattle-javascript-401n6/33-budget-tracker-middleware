@@ -24,7 +24,7 @@ class ExpenseItem extends React.Component {
   }
 
   remove(){
-    console.log('removing', this.props.id)
+    
     let data = {
       id: this.props.id
     }

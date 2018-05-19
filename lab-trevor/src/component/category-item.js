@@ -26,7 +26,7 @@ class CategoryItem extends React.Component {
      let newExpenses = newState.filter(function (el) {
         return el.category === category
       });
-      console.log('newExpenses', newExpenses)
+      
       return this.setState(this.state.expenses: newExpenses)
   }
   toggleEdit(){
@@ -34,7 +34,7 @@ class CategoryItem extends React.Component {
   }
 
   remove(){
-    console.log('removing', this.props.id)
+    
     let data = {
       id: this.props.id
     }
@@ -42,9 +42,9 @@ class CategoryItem extends React.Component {
   }
 
   render(){
-    console.log('render', this.props)
+    
     if(this.state.isEditing) {
-      return <UpdateCategory exUpdate={this.props.exUpdate}
+      return <UpdateCategory catUpdate={this.props.catUpdate}
         id={this.props.id}
         index={this.props.index}
         toggleEdit={this.toggleEdit}
