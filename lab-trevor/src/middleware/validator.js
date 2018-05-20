@@ -16,6 +16,7 @@ const validate = store => next => action => {
     } 
     return next(action);
   }
+  return next(action);
 }
 
 export default validate;
