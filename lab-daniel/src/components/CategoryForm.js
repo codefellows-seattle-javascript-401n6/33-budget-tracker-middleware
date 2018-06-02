@@ -28,7 +28,6 @@ class CreateForm extends React.Component {
         } else {
             const category = Object.assign({}, this.state, { id: uuidv4(), timestamp: new Date() });
             this.props.create(category);
-            console.log('New Category: ', category);
         }
     }
 
