@@ -3,13 +3,13 @@ import { createStore, applyMiddleware } from 'redux';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 
+import middleware from '../middleware/';
 import reducers from '../reducers/';
 const store = createStore(
   reducers,
   applyMiddleware(middleware.logger, middleware.validator)
 );
 
-import middleware from '../middleware/'
 import Dashboard from './dashboard';
 
 class App extends React.Component {
