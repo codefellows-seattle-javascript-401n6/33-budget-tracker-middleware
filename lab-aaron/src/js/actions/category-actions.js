@@ -18,7 +18,8 @@ export function categoryUpdate(categoryObj) {
   return {
     type: CATEGORY_UPDATE, 
     categoryObj
-    // category: category     //is the same as line above
+    // category: category //is also
+    // payload: category     //is the same as line above
   };
 };
 
