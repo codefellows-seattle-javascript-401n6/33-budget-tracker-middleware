@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js/,//No $ because store.js is not a .jsx file (it has no react code in it)
+        test: /\.js$/,//No $ because store.js is not a .jsx file (it has no react code in it)
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
@@ -22,4 +22,4 @@ module.exports = {
       }
     ]
   }
-}
+};

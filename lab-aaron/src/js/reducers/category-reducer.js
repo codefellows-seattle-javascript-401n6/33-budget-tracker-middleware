@@ -13,7 +13,7 @@ const initialReducerState = {
 };
 
 function categoryReducer(state, action) {
-  console.log('ACTEGORY REDUCER');
+  console.log('CATEGORY REDUCER');
   if (state === undefined) {
     console.log('ping CATEGORY initialState');
     return initialReducerState;
@@ -53,7 +53,7 @@ console.log('action: ', action.type, state);
           return Object.assign({}, element, action.categoryObj)
         } else {
           return element;
-        };
+        }
       });
       return Object.assign(newState, state, {categoriesList: currentCategories});
     

@@ -28,7 +28,7 @@ class CategoryForm extends React.Component {
 
   controlSubmit = (event) => {
     event.preventDefault();
-    if (this.props.name === 'update') {//no update yet
+    if (this.props.name === 'update') {
       console.log('categoryObj: ', this.props.category)
       const category = Object.assign({}, this.props.category, this.state);
       this.props.onSubmit(category);
@@ -40,6 +40,8 @@ class CategoryForm extends React.Component {
         price: this.state.price
       };
       this.props.onSubmit(categoryObj);
+                           //the Dashboard passes a function reference to this component
+                          //this line invoked the function, passing the categoryObj
       this.setState({
         name: '',
         price: 0,

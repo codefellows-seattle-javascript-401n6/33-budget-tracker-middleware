@@ -57,11 +57,7 @@ console.log('EPXENSE REDUCER');
       });
       return Object.assign(newState, state, { expensesList: currentExpenses});
 
-    default:import {
-      EXPENSE_CREATE,
-      EXPENSE_UPDATE,
-      EXPENSE_DELETE
-    } from '../actions/expense-actions';
+    default:
       return state;
   };
 };
